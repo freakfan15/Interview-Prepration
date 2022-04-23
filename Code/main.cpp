@@ -5,27 +5,24 @@ using namespace std;
 
 int main()
 {
+
 	#ifndef ONLINE_JUDGE
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
 
-	int t;
-	cin >> t;
-	
-	while (t--)
-	{
-		int size;
-		cin >> size;
-		int *input = new int[size];
-
-		for (int i = 0; i < size; i++)
-		{
-			cin >> input[i];
-		}
-
-		cout << findDuplicate(input, size) << endl;
-	}
-
-	return 0;
+	int *a,*b,m,n,i;
+    cin>>m;
+    a=new int[m];
+    for(i=0;i<m;i++)
+        cin>>a[i];
+    cin>>n;
+    b=new int[n];
+    for(i=0;i<n;i++)
+        cin>>b[i];
+    long ans = maxPathSum(a,b,m, n);
+    cout << ans << endl;
+    delete a;
+    delete b;
+    return 0;
 }
