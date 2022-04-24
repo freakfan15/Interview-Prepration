@@ -14,19 +14,11 @@ int main() {
 	freopen("output.txt","w",stdout);
 	#endif
 
-    int *a,*b,m,n,i;
-    cin>>m;
-    a=new int[m];
-    for(i=0;i<m;i++)
-        cin>>a[i];
-    cin>>n;
-    b=new int[n];
-    for(i=0;i<n;i++)
-        cin>>b[i];
-    long ans = maxPathSum(a,b,m, n);
-    cout << ans << endl;
-    delete a;
-    delete b;
+    int size = 1e6;
+    string str;
+    getline(cin, str);
+    str = getCompressedString(str);
+    cout << str << endl;
 
 
     return 0;

@@ -1,3 +1,7 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
 string getCompressedString(string &input) {
     // Write your code here.
 
@@ -18,4 +22,21 @@ string getCompressedString(string &input) {
 
     return ans;
     
+}
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	#endif
+
+    int size = 1e6;
+    string str;
+    getline(cin, str);
+    str = getCompressedString(str);
+    cout << str << endl;
+
+
+    return 0;
 }
