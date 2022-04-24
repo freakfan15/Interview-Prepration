@@ -12,7 +12,7 @@ void merge(int *arr1, int size1, int *arr2, int size2, int *ans)
         else {
             ans[k++] = arr2[j];
             j++;
-        }
+        
     }
 
     while(i<size1){
@@ -71,4 +71,6 @@ int main()
 		delete[] arr2;
 		delete[] ans;
 	}
+
+	return 0;
 }
