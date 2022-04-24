@@ -13,12 +13,20 @@ int main() {
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
-    int size = 1e6;
-    char str[size];
-    cin.getline(str, size);
-    reverseEachWord(str);
-    cout << str;
+
+    int *a,*b,m,n,i;
+    cin>>m;
+    a=new int[m];
+    for(i=0;i<m;i++)
+        cin>>a[i];
+    cin>>n;
+    b=new int[n];
+    for(i=0;i<n;i++)
+        cin>>b[i];
+    long ans = maxPathSum(a,b,m, n);
+    cout << ans << endl;
+    delete a;
+    delete b;
 
 
     return 0;
