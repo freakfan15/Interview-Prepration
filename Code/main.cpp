@@ -9,38 +9,35 @@ using namespace std;
 
 int main() {
 
-vector<int> v(4,12);
-v.push_back(15);
-cout << v.size() <<" " <<v.capacity() << " ";
-v.push_back(25);
-cout << v.size() <<" " << v.capacity();
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	#endif
 
-	// #ifndef ONLINE_JUDGE
-	// freopen("input.txt","r",stdin);
-	// freopen("output.txt","w",stdout);
-	// #endif
+    int t;
+	cin >> t;
+	while (t--)
+	{
+		int size;
 
- //    int n;
- //    cin >> n;
-    
- //    int **input = new int*[n];
-    
- //    for(int i = 0; i < n; i++) {
- //        input[i] = new int[n];
- //        for(int j = 0; j < n; j++) {
- //            cin >> input[i][j];
- //        }
- //    }
-    
- //    rotate(input, n);
-    
- //    for(int i = 0; i < n; i++) {
- //        for(int j = 0; j < n; j++) {
- //            cout << input[i][j] << " ";
- //        }
- //        cout << endl;
- //    }
+		cin >> size;
+		int *arr = new int[size];
 
+		for (int i = 0; i < size; i++)
+		{
+			cin >> arr[i];
+		}
+
+		sort012(arr, size);
+
+		for (int i = 0; i < size; i++)
+		{
+			cout << arr[i] << " ";
+		}
+
+		delete[] arr;
+		cout << endl;
+	}
 
     return 0;
 }
