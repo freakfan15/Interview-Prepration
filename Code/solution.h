@@ -1,21 +1,19 @@
-string getCompressedString(string &input) {
-    // Write your code here.
-
-    string ans = "";
-    int cnt = 1;
-    for(int i=0; input[i]!='\0'; i++){
-        ans += input[i];
-        while(input[i+1] != '\0' && (input[i+1] == input[i])){
-            cnt++;
-            i++;
-        }
-
-        if(cnt!=1){
-            ans += to_string(cnt);
-            cnt = 1;
+void rotate(int **input, int n){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(i>j){
+                swap(input[i][j], input[j][i]);
+            }
         }
     }
 
-    return ans;
-    
+    int s = 0, e = n-1;
+    while(s<e){
+        int j = 0;
+        while(j<n){
+            swap(input[s][j], input[e][j]);
+            j++;
+        }
+        s++; e--;
+    }
 }
