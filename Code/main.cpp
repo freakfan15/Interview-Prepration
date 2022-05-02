@@ -14,22 +14,8 @@ int main() {
 	freopen("output.txt","w",stdout);
 	#endif
 
-	int t;
-	cin >> t;
-	while (t--)
-	{
-		int row, col;
-		cin >> row >> col;
-		int **input = new int *[row];
-		for (int i = 0; i < row; i++)
-		{
-			input[i] = new int[col];
-			for (int j = 0; j < col; j++)
-			{
-				cin >> input[i][j];
-			}
-		}
-		wavePrint(input, row, col);
-		cout << endl;
-	}
+	char input[1000];
+    cin.getline(input, 1000);
+    reverseStringWordWise(input);
+    cout << input << endl;
 }

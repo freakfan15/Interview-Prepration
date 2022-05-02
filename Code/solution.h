@@ -1,16 +1,28 @@
-void wavePrint(int **input, int nRows, int mCols)
-{
-    for(int i=0; i<mCols; i++){
-        if(i%2==0){
-            for(int j=0; j<nRows; j++){
-                cout<<input[j][i]<<" ";
-            }
-        }
-        else{
-            for(int j=nRows - 1; j>=0; j--){
-                cout<<input[j][i]<<" ";
-            }
-        }
+void reverseStringWordWise(char input[]) {
+    int e = 0;
+    for(int i=0; input[i]!='\0'; i++){
+        e++;
     }
-    
+    int end = e - 1;
+
+    int start = 0;
+
+    while(start<end){
+        swap(input[start++], input[end--]);
+    }
+
+    int s = 0;
+    int i=0, j=0;
+
+    while(s<=e){
+        if(input[s] == ' ' || input[s]=='\0'){
+            j = s - 1;
+            while(i<j){
+                swap(input[i++], input[j--]);
+            }
+            i = s + 1;
+        }
+
+        s++;
+    }
 }
