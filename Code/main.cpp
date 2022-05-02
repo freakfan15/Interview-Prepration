@@ -14,30 +14,19 @@ int main() {
 	freopen("output.txt","w",stdout);
 	#endif
 
-    int t;
-	cin >> t;
-	while (t--)
-	{
-		int size;
-
-		cin >> size;
-		int *arr = new int[size];
-
-		for (int i = 0; i < size; i++)
-		{
-			cin >> arr[i];
-		}
-
-		sort012(arr, size);
-
-		for (int i = 0; i < size; i++)
-		{
-			cout << arr[i] << " ";
-		}
-
-		delete[] arr;
-		cout << endl;
+    int n;
+	cin>>n;
+    int* arr=new int[n];
+    int* dep=new int[n];
+    for(int i=0;i<n;i++)
+    {
+    	cin>>arr[i];
 	}
+	for(int i=0;i<n;i++)
+    {
+    	cin>>dep[i];
+	}
+    cout<< platformsNeeded(arr, dep, n);
 
     return 0;
 }
