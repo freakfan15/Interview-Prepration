@@ -14,13 +14,22 @@ int main() {
 	freopen("output.txt","w",stdout);
 	#endif
 
-    int len;
-    cin>>len;
-	int *arr = new int[len + 1];
-	
-	for(int i=0;i<len;i++)
+	int t;
+	cin >> t;
+	while (t--)
 	{
-		cin>>arr[i];
+		int row, col;
+		cin >> row >> col;
+		int **input = new int *[row];
+		for (int i = 0; i < row; i++)
+		{
+			input[i] = new int[col];
+			for (int j = 0; j < col; j++)
+			{
+				cin >> input[i][j];
+			}
+		}
+		wavePrint(input, row, col);
+		cout << endl;
 	}
-	Leaders(arr,len);
 }

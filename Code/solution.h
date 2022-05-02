@@ -1,19 +1,16 @@
-void Leaders(int* arr,int len)
+void wavePrint(int **input, int nRows, int mCols)
 {
-    int maxVal = arr[len - 1];
-    vector<int> ans;
-
-    int ansSize = 0;
-    for(int i=len-1; i>=0; i--){
-        if(arr[i] >= maxVal){
-            ans.push_back(arr[i]);
-            maxVal = arr[i];
+    for(int i=0; i<mCols; i++){
+        if(i%2==0){
+            for(int j=0; j<nRows; j++){
+                cout<<input[j][i]<<" ";
+            }
+        }
+        else{
+            for(int j=nRows - 1; j>=0; j--){
+                cout<<input[j][i]<<" ";
+            }
         }
     }
-
-    cout<<ans.size()<<endl;
-
-    for(int i= ans.size() - 1; i>=0; i--){
-        cout<<ans[i]<<" ";
-    }
+    
 }
