@@ -5,7 +5,24 @@
 #include <unordered_set>
 #include <unordered_map>
 using namespace std;
-#include "Solution.h"
+
+void Leaders(int* arr,int len)
+{
+    int maxVal = arr[len - 1];
+    vector<int> ans;
+
+    int ansSize = 0;
+    for(int i=len-1; i>=0; i--){
+        if(arr[i] >= maxVal){
+            ans.push_back(arr[i]);
+            maxVal = arr[i];
+        }
+    }
+
+    for(int i= ans.size() - 1; i>=0; i--){
+        cout<<ans[i]<<" ";
+    }
+}
 
 int main() {
 

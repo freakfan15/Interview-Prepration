@@ -1,35 +1,19 @@
-int platformsNeeded(int arrival[], int departure[], int n) {
+void Leaders(int* arr,int len)
+{
+    int maxVal = arr[len - 1];
+    vector<int> ans;
 
-    int need[n] = {0};
-
-    int ans = 0;
-    for(int i=0; i<n; i++){
-        int j=0;
-        while(j<ans){
-            if((arrival[i] > need[j]) || (arrival[i]<1200 && arrival[i-1] > 1200 && need[j]>1200)){
-                need[j] = departure[i];
-                break;
-            }
-            j++;
+    int ansSize = 0;
+    for(int i=len-1; i>=0; i--){
+        if(arr[i] >= maxVal){
+            ans.push_back(arr[i]);
+            maxVal = arr[i];
         }
-        if(j==ans){
-            need[j] = departure[i];
-            ans++;
-        }
-        else{
-            j++;
-            while(j<ans){
-                need[j] = 0;
-                j++;
-            }
-        }
-        
     }
 
-    return ans;
-}
-// i=0: 0315 0 0 0 0 ans = 1
-// i=1: 2338 0 0 0 0 ans = 1
-// i=2: 2359 0 0 0 0 ans = 1
-// i=3:
+    cout<<ans.size()<<endl;
 
+    for(int i= ans.size() - 1; i>=0; i--){
+        cout<<ans[i]<<" ";
+    }
+}
