@@ -1,28 +1,20 @@
-void reverseStringWordWise(char input[]) {
-    int e = 0;
-    for(int i=0; input[i]!='\0'; i++){
-        e++;
-    }
-    int end = e - 1;
-
-    int start = 0;
-
-    while(start<end){
-        swap(input[start++], input[end--]);
+void intersection(int *arr1, int *arr2, int n, int m) 
+{
+    //Write your code here
+    unordered_map<int,int> mp;
+    for(int i=0; i<m; i++){
+        mp[arr2[i]]++;
     }
 
-    int s = 0;
-    int i=0, j=0;
+    sort(arr1, arr1+n);
 
-    while(s<=e){
-        if(input[s] == ' ' || input[s]=='\0'){
-            j = s - 1;
-            while(i<j){
-                swap(input[i++], input[j--]);
-            }
-            i = s + 1;
+    for(int i=0; i<n; i++){
+        if(mp[arr1[i]] > 0){
+            cout<<arr1[i]<<" ";
+            mp[arr1[i]]--;
+
         }
 
-        s++;
     }
+
 }
