@@ -15,19 +15,11 @@ int main() {
 	freopen("output.txt","w",stdout);
 	#endif
 
-    int n;
-    cin >> n;
+    char str1[10010], str2[10010];
+    cin>>str1;
+    cin>>str2;
+    
+    cout << makeAnagram(str1,str2) << endl;
+    return 0;
 
-    int *input = new int[n];
-
-    for (int i = 0; i < n; i++) {
-        cin >> input[i];
-    }
-
-    int k;
-    cin >> k;
-
-    cout << getPairsWithDifferenceK(input, n, k);
-
-    delete[] input;
 }

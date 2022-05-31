@@ -1,3 +1,11 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include <algorithm>
+#include <unordered_set>
+#include <unordered_map>
+#include <map>
+using namespace std;
 
 int makeAnagram(char str1[], char str2[]){
     /* Don't write main().
@@ -13,13 +21,7 @@ int makeAnagram(char str1[], char str2[]){
     }
 
     for(int i=0; str2[i]!='\0'; i++){
-        char c = str2[i];
-        if(mp[c] > 0){
-            mp[c]--;
-        } 
-        else {
-            mp[c]++;
-        }
+        mp[str2[i]]--;
     }
 
     int ans = 0;
@@ -30,4 +32,21 @@ int makeAnagram(char str1[], char str2[]){
 
     return ans;
     
+}
+
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	#endif
+
+    char str1[10010], str2[10010];
+    cin>>str1;
+    cin>>str2;
+    
+    cout << makeAnagram(str1,str2) << endl;
+    return 0;
+
 }
