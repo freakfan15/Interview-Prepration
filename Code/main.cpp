@@ -15,11 +15,14 @@ int main() {
 	freopen("output.txt","w",stdout);
 	#endif
 
-    char str1[10010], str2[10010];
-    cin>>str1;
-    cin>>str2;
+    int n=0;
+    cin>>n;
+    int *arr = new int[n];
+    for(int i=0;i<n;i++){
+    	cin>>arr[i];
+    }
     
-    cout << makeAnagram(str1,str2) << endl;
+    cout << max(arr,n);
     return 0;
 
 }
