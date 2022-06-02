@@ -24,5 +24,3 @@ int main(){
   
     cout << power(x, n) << endl;
 }
-
-
