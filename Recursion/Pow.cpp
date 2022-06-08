@@ -1,5 +1,4 @@
 #include<iostream>
-#include "Solution.h"
 using namespace std;
 
 int power(int x, int n) {
