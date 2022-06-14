@@ -16,6 +16,7 @@ int subs(string input, string output[]) {
 }
 
 int main() {
+	
 	string input;
 	cin >> input;
 	string* output = new string[1000];
