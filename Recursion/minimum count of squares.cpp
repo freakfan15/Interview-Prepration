@@ -38,7 +38,7 @@ int minCount(int n){
         return 1;
     }
     
-    int minF = 50;
+    int minF = n;
     int ans = minF;
     
     for(int i=1; i<=n; i++){
