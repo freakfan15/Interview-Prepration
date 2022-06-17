@@ -7,7 +7,6 @@ int main(){
   
     cout << count(n) << endl;
 }
-
 int count(int n){
     
     if(n==0){
