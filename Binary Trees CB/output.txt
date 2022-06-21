@@ -1,0 +1,17 @@
+Preorder: 8 10 1 6 4 7 3 14 13 
+Inorder: 1 10 4 6 7 8 3 13 14 
+Postorder: 1 4 7 6 10 13 14 3 8 
+Height of binary tree: 4
+Level Order recursive: 👇
+8 
+10 3 
+1 6 14 
+4 7 13 
+Level Order BFS: 8 10 3 1 6 14 4 7 13 
+Level order with new line BFS:👇
+8 
+10 3 
+1 6 14 
+4 7 13 
+Right view: 8 3 14 13 
+Left view: 8 10 1 4 Lca of 1 and 7 is: 10
