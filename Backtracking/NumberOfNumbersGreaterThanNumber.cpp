@@ -1,3 +1,7 @@
+/*
+Find number of numbers greater than number 
+*/
+
 #include <iostream>
 using namespace std;
 
