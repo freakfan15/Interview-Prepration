@@ -1,3 +1,31 @@
+/*
+Lexicographical Order
+Send Feedback
+Given a number n, print numbers from 1 to n in dictionary(lexicographical) order.
+Sample Input
+20
+Sample Output
+1
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+2
+20
+3
+4
+5
+6
+7
+8
+9
+*/
 #include <iostream>
 using namespace std;
 
