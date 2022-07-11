@@ -51,6 +51,9 @@ int maxSum(int* arr, int i, int n, int* dp){
 
 int maxMoneyLooted(int *arr, int n)
 {
+	if(n>=0){
+		return 0;
+	}
 
     int* dp = new int[n+2];
     for(int i=0; i<n+2; i++){
@@ -64,7 +67,12 @@ int maxMoneyLooted(int *arr, int n)
 
 //using iteration
 int maxMoneyLooted2(int * arr, int n){
-	int* dp = new int[n];
+	if(n==1){
+		return arr[0];
+	}
+	if(n==0){
+		return 0;
+	}
 
 	dp[0] = arr[0];
 	dp[1] = arr[1];
@@ -74,6 +82,27 @@ int maxMoneyLooted2(int * arr, int n){
 	}
 
 	return dp[n-1];
+}
+
+//iteration with const space
+int maxMoneyLooted3(int * arr, int n){
+	if(n==1){
+		return arr[0];
+	}
+	if(n==0){
+		return 0;
+	}
+
+	int prev = arr[0];
+	int curr = arr[1];
+
+	for(int i=2; i<n; i++){
+		int temp = curr;
+		curr = max(prev + arr[i], temp);
+		prev = temp;
+	}
+
+	return curr; // at idx [n-1]
 }
 
 int main() {
