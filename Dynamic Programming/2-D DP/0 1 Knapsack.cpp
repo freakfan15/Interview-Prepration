@@ -60,12 +60,7 @@ int knapsackHelper(int* weight, int* value, int n, int maxWeight, vector<vector<
 
 int knapsack(int* weight, int* value, int n, int maxWeight) {
     
-    vector<vector<int>> dp;
-
-    for(int i=0; i<=maxWeight; i++){
-        vector<int> vi(n+1, -1);
-        dp.push_back(vi);
-    }
+    vector<vector<int>> dp(maxWeight+1, vector<int> (n+1, -1));
 
     return knapsackHelper(weight, value, n, maxWeight, dp);
 }
