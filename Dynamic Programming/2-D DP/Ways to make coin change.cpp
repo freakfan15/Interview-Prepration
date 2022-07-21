@@ -59,7 +59,7 @@ int countWaysToMakeChangeHelp(int denominations[], int numDenominations, int val
 }
 
 int countWaysToMakeChange(int denominations[], int numDenominations, int value){
-    vector<vector<int>> dp(value+1, vector<int> (numDenominations+1, -1));
+    vvi dp(value+1, vi (numDenominations+1, -1));
 
     return countWaysToMakeChangeHelp(denominations, numDenominations, value, dp);
 
