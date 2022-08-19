@@ -2,6 +2,20 @@
 using namespace std;
 #include "Node.cpp"
 
+//reverse ll
+Node* reverse(Node* head){
+    if(head == NULL ||head->next==NULL){
+        return head;
+    }
+    
+    Node* newHead = reverse(head->next);
+	head->next->next = head;
+    head->next = NULL;
+    
+    return newHead;
+}
+
+//INSERT node at ith index
 Node* insertNode(Node *head, int i, int data) {
 	Node *newNode = new Node(data);
 	int count = 0;
@@ -79,16 +93,67 @@ void print(Node *head) {
 	}
 }
 
+//length recursive
+int length(Node *head) {
+    // Write your code here
+    if(head==NULL){
+        return 0;
+    }
+    
+    return 1 + length(head->next);
+}
+
+//length iterative
+int lengthI(Node *head)
+{
+    //Write your code here
+    Node* temp = head;
+    int len = 0;
+    while(temp!=NULL){
+        len++;
+        temp = temp->next;
+    }
+    
+    return len;
+}
+
+//delete node at ith index
+Node *deleteNode(Node *head, int pos)
+{
+    
+    Node* temp = head;
+    int cnt = 0;
+
+    if(temp!=NULL && pos == 0){
+        head = head->next;
+        delete temp;
+        return head;
+    }
+
+    while(temp!=NULL && cnt<pos-1){
+        temp = temp->next;
+        cnt++;
+    }
+
+    if(temp!=NULL && temp->next!=NULL){
+        Node* a = temp->next;
+        temp->next = a->next;
+        delete a; 
+    }
+
+    return head;
+}
 
 int main() {
 
 	Node *head = takeInpu_Better();
+	head = reverse(head);
 	print(head);
 
-	int i, data;
-	cin >> i >> data;
-	head = insertNode(head, i, data);
-	print(head);
+	// int i, data;
+	// cin >> i >> data;
+	// head = insertNode(head, i, data);
+	// print(head);
 
 	
 	/*
